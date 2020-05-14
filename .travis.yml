@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t joedonline/node .
+  - docker images joedonline/node
