@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t joedonline/node .
   - docker images joedonline/node
+
+before_deploy:
+  - docker login -u <username> -p <password>
+
+deploy:
+  provider: script
+  script: docker push joedonline/node
+  on:
+    branch: master
